@@ -1,0 +1,19 @@
+<template>
+  <div>
+    <NuxtLink
+      to="/"
+      class="n-link-base"
+    >
+      Home
+    </NuxtLink>
+    <NuxtLink
+      to="/notes"
+      class="n-link-base"
+    >
+      Notes
+    </NuxtLink>
+  </div>
+</template>
+
+<style>
+</style>

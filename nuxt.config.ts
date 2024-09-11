@@ -15,10 +15,18 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "./assets/styles/_vars.scss" as *;',
+        },
+      },
+    },
   },
   css: [
     'vuetify/lib/styles/main.sass',
     '@mdi/font/css/materialdesignicons.css',
+    './assets/styles/global.scss',
   ],
   build: {
     transpile: ['vuetify'],
@@ -37,7 +45,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiNotes: '',
+      apiNotes: 'https://amber-rhodium.ru/',
     },
   },
 })

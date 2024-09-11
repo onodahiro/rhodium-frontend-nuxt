@@ -2,7 +2,12 @@
   <div class="main-page">
     <div class="main-page__bg" />
     <div class="main-page__welcome">
-      <CText> Welcome </CText>
+      <CText
+        style="font-size: 65px;
+        padding-top: 30vh;"
+      >
+        Welcome
+      </CText>
     </div>
   </div>
 </template>
@@ -27,7 +32,7 @@ export default {
       filter: blur(30vh);
       opacity: .8;
       // background: linear-gradient(45deg, #00dc82, #36e4da 50%, #0047e1); // original
-      background: linear-gradient(257deg, #00dc8263, #36e4da75 50%, #0047e180);
+      background: $main-bg;
     }
 
     &__welcome {

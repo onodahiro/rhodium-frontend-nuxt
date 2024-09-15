@@ -4,12 +4,17 @@
     :elevation="2"
   >
     <template #prepend>
-      <v-app-bar-title @click="toggleNavigate('/')">
-        Abmer
-      </v-app-bar-title>
-      <v-btn @click="toggleNavigate('/about')">
-        Home
-      </v-btn>
+      <div class="d-flex align-center ga-3">
+        <v-app-bar-title @click="toggleNavigate('/')">
+          Abmer
+        </v-app-bar-title>
+        <v-btn @click="toggleNavigate('/notes')">
+          Notes
+        </v-btn>
+        <v-btn @click="toggleNavigate('/about')">
+          About
+        </v-btn>
+      </div>
     </template>
 
     <template #append>

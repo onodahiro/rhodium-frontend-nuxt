@@ -20,7 +20,7 @@ useHead({
 
 <style>
   html {
-    overflow-y: auto
+    overflow-y: auto;
   }
 
   body {

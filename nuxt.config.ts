@@ -45,7 +45,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiNotes: 'https://amber-rhodium.ru/',
+      apiNotes: 'https://amber-rhodium.ru/api/notes',
+      // apiNotes: 'http://localhost:54654/',
     },
   },
 })

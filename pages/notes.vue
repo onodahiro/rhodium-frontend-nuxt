@@ -1,16 +1,19 @@
 <template>
   <div class="notes-page">
-    <iframe
-      :src="runtimeConfig.public.apiNotes"
-      class="notes-page__container"
+    <CInput
+      v-model="noteText"
     />
+    <Cbtn
+      text="Save"
+    />
+    <NotesList :list="notesStore.data" />
   </div>
 </template>
 
 <script setup lang="ts">
-import type { RuntimeConfig } from 'nuxt/schema'
-
-const runtimeConfig: RuntimeConfig = useRuntimeConfig()
+const noteText = ref('')
+const notesStore = useNotesStore()
+notesStore.getNotes()
 </script>
 
 <style lang="scss">

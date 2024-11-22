@@ -5,15 +5,29 @@
     />
     <Cbtn
       text="Save"
+      @click="saveNote"
     />
-    <NotesList :list="notesStore.data" />
+    <NotesList
+      :list="notesStore.notesData"
+      @check="checkNote"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 const noteText = ref('')
 const notesStore = useNotesStore()
+
 notesStore.getNotes()
+
+function saveNote() {
+  notesStore.saveNote(noteText.value.trim())
+  noteText.value = ''
+}
+
+function checkNote(id: number) {
+  notesStore.checkNote(id)
+}
 </script>
 
 <style lang="scss">

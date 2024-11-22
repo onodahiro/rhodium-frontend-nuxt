@@ -1,33 +1,32 @@
 <template>
   <div>
     <ol
-      v-for="({ text }, index) in list"
+      v-for="({ id, text, checked }, index) in list"
       :key="index"
     >
       <li>
+        {{ id }}
+        <input
+          type="checkbox"
+          :checked="Boolean(checked)"
+          @click.prevent="emit('check', id)"
+        >
         {{ text }}
       </li>
     </ol>
-    {{ notes }}
   </div>
 </template>
 
 <script setup lang="ts">
-type NoteEl = {
-  id: number
-  text: 'string'
-  checked: number
-  tags: Array<{
-    id: number
-    text: string
-  }>
-  date_created: string
-}
+import type { NoteEl } from '../stores/notes'
+
+const emit = defineEmits<{
+  (e: 'check', id: number): void
+}>()
 
 interface props {
   list: Array<NoteEl> | undefined
 }
 
-const notes = useNotes()
 const { list } = defineProps<props>()
 </script>

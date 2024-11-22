@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-text-field
+      v-model="noteText"
       :name="noteText"
       label="lool"
     />

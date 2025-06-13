@@ -9,7 +9,7 @@ type NoteEl = {
   date_created: string
 }
 
-type MetaEl = {
+type Meta = {
   current_page: number
   from: number
   last_page: number
@@ -26,20 +26,25 @@ type MetaEl = {
 
 type Notes = {
   data: Array<NoteEl>
-  meta: Array<MetaEl>
+  meta: Meta
 }
 
-export type { NoteEl }
-
+export type { NoteEl, Meta }
 export const useNotesStore = defineStore('notesStore', {
   state: () => ({
     data: [] as Array<NoteEl>,
-    meta: [] as Array<MetaEl>,
+    meta: {} as Meta,
   }),
 
   getters: {
     notesData(state) {
       return state.data
+    },
+    notesMeta(state) {
+      return state.meta
+    },
+    lastPage(state) {
+      return state.meta.last_page
     },
   },
 
@@ -55,27 +60,20 @@ export const useNotesStore = defineStore('notesStore', {
         method: 'POST',
         body: { text },
       })
-        .then((res) => {
-          if (res.data) {
-            this.getNotes()
-          }
+        .then(() => {
+          this.getNotes()
         })
     },
 
-    async checkNote(id: number) {
+    async checkNote(id: string) {
       await useNotesApi<{ id: string }>(`/check?id=${id}`)
         .then((res) => {
-          if (res) {
-            const target = this.data.find(el => el.id === Number(res.id))
-            if (target?.checked === 1) {
-              target.checked = 0
-            }
-            else if (target?.checked === 0) {
-              target.checked = 1
-            }
-            else {
-              throw new Error('Note not found')
-            }
+          const target = this.data.find(el => el.id === +res.id)
+          if (target?.checked) {
+            target.checked = 0
+          }
+          else if (target?.checked === 0) {
+            target.checked = 1
           }
         })
     },

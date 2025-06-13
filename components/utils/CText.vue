@@ -1,17 +1,16 @@
 <template>
   <span
     :style="props.styles"
-    :class="'c-text-gradient'"
+    :class="props.className"
   ><slot /></span>
 </template>
 
 <script setup lang="ts">
-interface Props {
+const props = withDefaults(defineProps<{
   styles?: string | undefined
+  className?: string | undefined
   withGradient?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   withGradient: false,
 })
 </script>

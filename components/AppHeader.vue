@@ -18,7 +18,7 @@
     </template>
 
     <template #append>
-      <v-btn icon="mdi-heart" />
+      <!-- <v-btn icon="mdi-heart" /> -->
 
       <v-btn
         v-if="theme.global.name.value === 'light'"

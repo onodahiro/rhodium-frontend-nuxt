@@ -1,0 +1,7 @@
+$current-theme: theme('current');
+// $boreder: $current-theme['border-color']
+.note {
+    display: flex;
+    padding-right: 15vw;
+    border-bottom: 1px solid ;
+}

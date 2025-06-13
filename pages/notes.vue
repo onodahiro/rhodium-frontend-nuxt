@@ -1,16 +1,26 @@
 <template>
   <div class="notes-page">
-    <CInput
-      v-model="noteText"
-    />
-    <Cbtn
-      text="Save"
-      @click="saveNote"
-    />
+    <div class="notes-controll">
+      <CInput
+        v-model="noteText"
+        label="Note text"
+        hide-details
+        @enter="saveNote"
+      />
+      <Cbtn
+        text="Save"
+        @click="saveNote"
+      />
+    </div>
     <NotesList
       :list="notesStore.notesData"
-      @check="checkNote"
     />
+    <div class="notes-paginate">
+      <CPaginate
+        :page-count="notesStore.notesMeta.last_page"
+        @click-page="selectPage"
+      />
+    </div>
   </div>
 </template>
 
@@ -25,8 +35,8 @@ function saveNote() {
   noteText.value = ''
 }
 
-function checkNote(id: number) {
-  notesStore.checkNote(id)
+function selectPage(page: number) {
+  notesStore.getNotes(page)
 }
 </script>
 
@@ -35,11 +45,18 @@ function checkNote(id: number) {
   width: 100%;
   height: calc(100vh - 64px);
   overflow: hidden;
+}
 
-  &__container {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+.notes-controll {
+  padding: 15px 10vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+}
+
+.notes-paginate {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
 }
 </style>

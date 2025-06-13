@@ -5,6 +5,7 @@
       <CText
         style="font-size: 65px;
         padding-top: 30vh;"
+        class-name="c-text-gradient"
       >
         Welcome
       </CText>
@@ -25,7 +26,6 @@
       bottom: -40vh;
       filter: blur(30vh);
       opacity: .8;
-      // background: linear-gradient(45deg, #00dc82, #36e4da 50%, #0047e1); // original
       background: $main-bg;
     }
 

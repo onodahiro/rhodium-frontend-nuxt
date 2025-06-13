@@ -76,13 +76,9 @@ function checkNote(id: string | undefined) {
   .notes--container > :last-child {
     border-bottom: none;
   }
-  // .notes--container {
-  //   :last-child {
-  //     border-bottom: 1px solid red;
-  //   }
-  // }
 
   .note {
+    min-height: 74px;
     display: flex;
     padding-right: 15vw;
   }

@@ -2,20 +2,26 @@
   <div>
     <v-checkbox
       v-model="chekboxValue"
-      :label="label"
-      density="compact"
-      hide-details
+      :label="props.label"
+      :hide-details="props.hideDetails"
+      :density="props.density"
       @click.prevent="emit('clickCheckbox', props.value)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   value: string | undefined
   initial: boolean | undefined
-  label?: string | undefined
-}>()
+  label?: string
+  density?: 'default' | 'comfortable' | 'compact'
+  hideDetails?: boolean
+}>(), {
+  label: '',
+  density: 'compact',
+  hideDetails: true,
+})
 
 const emit = defineEmits<{
   (e: 'clickCheckbox', value: string | undefined): void

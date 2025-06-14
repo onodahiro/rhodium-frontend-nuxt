@@ -18,7 +18,7 @@
     </template>
 
     <template #append>
-      <v-btn icon="mdi-heart" />
+      <!-- <v-btn icon="mdi-heart" /> -->
 
       <v-btn
         v-if="theme.global.name.value === 'light'"
@@ -42,9 +42,9 @@ const theme = useTheme()
 const savedTheme = useCookie('theme')
 
 function toggleTheme() {
-  const currentTheme = theme.global.current.value.dark ? 'light' : 'dark'
-  theme.global.name.value = currentTheme
-  savedTheme.value = currentTheme
+  const newTheme = theme.global.current.value.dark ? 'light' : 'dark'
+  theme.global.name.value = newTheme
+  savedTheme.value = newTheme
 }
 
 async function toggleNavigate(route: string) {
@@ -54,7 +54,6 @@ async function toggleNavigate(route: string) {
 
 <style lang="scss">
   .app-bar {
-    // padding: 0 20px;
     cursor: pointer;
   }
 </style>

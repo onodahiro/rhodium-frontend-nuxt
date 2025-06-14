@@ -1,6 +1,6 @@
 <template>
   <div>
-    The about page will be here
+    About page will be here
   </div>
 </template>
 

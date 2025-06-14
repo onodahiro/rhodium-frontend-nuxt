@@ -3,12 +3,16 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', (_options, nuxt) => {
-    nuxt.hooks.hook('vite:extendConfig', (config) => {
+  modules: [
+    '@nuxt/eslint',
+    '@pinia/nuxt',
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
       // @ts-expect-error disable config error
-      config.plugins.push(vuetify({ autoImport: true }))
-    })
-  }],
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
+    },
+  ],
   vite: {
     vue: {
       template: {
@@ -45,7 +49,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiNotes: 'https://amber-rhodium.ru/',
+      // notesUrl: 'https://amber-rhodium.ru/api/notes',
+      notesUrl: 'http://127.0.0.1:8000/api/notes',
+      // apiNotes: 'http://localhost:54654/',
     },
   },
 })

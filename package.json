@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --port=3000",
+    "dev": "nuxt dev --port=3000 --debug",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -14,7 +14,9 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@nuxt/eslint": "^0.5.5",
+    "@pinia/nuxt": "^0.5.4",
     "nuxt": "^3.13.0",
+    "pinia": "^2.2.2",
     "vue": "latest"
   },
   "devDependencies": {

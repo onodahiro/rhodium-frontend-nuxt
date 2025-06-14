@@ -23,10 +23,6 @@ useHead({
     overflow-y: auto;
   }
 
-  body {
-      margin: 0;
-  }
-
   .page-container {
     padding-top: 64px;
   }

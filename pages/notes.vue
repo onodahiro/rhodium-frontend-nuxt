@@ -52,6 +52,12 @@ function selectPage(page: number) {
   display: flex;
   justify-content: space-between;
   gap: 10%;
+
+  @media (max-width: map-get($breakpoints, md)) {
+    padding: 15px 5vw;
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 .notes-paginate {

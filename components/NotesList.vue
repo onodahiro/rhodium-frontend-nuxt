@@ -50,6 +50,10 @@ function checkNote(id: string | undefined) {
     overflow-y: scroll;
     height: calc(100vh - 209px);
 
+    @media (max-width: map-get($breakpoints, md)) {
+      height: calc(100vh - 264px);
+    }
+
     :last-child {
       border-bottom: none;
     }
@@ -81,6 +85,10 @@ function checkNote(id: string | undefined) {
     min-height: 74px;
     display: flex;
     padding-right: 15vw;
+
+    @media (max-width: map-get($breakpoints, md)) {
+      min-height: 68px;
+    }
   }
 
   .note__left--wrapper {
@@ -93,11 +101,19 @@ function checkNote(id: string | undefined) {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    @media (max-width: map-get($breakpoints, md)) {
+      padding: 10px;
+    }
   }
 
   .note__right {
     padding: 15px;
     display: flex;
     align-items: center;
+
+    @media (max-width: map-get($breakpoints, md)) {
+      padding: 10px;
+    }
   }
 </style>

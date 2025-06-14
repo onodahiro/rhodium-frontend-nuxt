@@ -1,3 +1,12 @@
+$breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 960px,
+  lg: 1264px,
+  xl: 1904px
+);
+
+
 $main-bg: linear-gradient(257deg, #00dc8263, #36e4da75 50%, #0047e180);
 $bg-text: linear-gradient(45deg, #1d7f5b, #28269f); // 3
 
@@ -11,5 +20,3 @@ $theme-light: (
 $theme-dark: (
   border-color: #ffffff7a,
 );
-// $bg-text: linear-gradient(45deg, #2ba075, #484ea5); // 2
-// $bg-text: linear-gradient(45deg, #37ad82, #4d52a9); // 1

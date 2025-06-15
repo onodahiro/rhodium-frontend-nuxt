@@ -11,6 +11,9 @@
         <v-btn @click="toggleNavigate('/notes')">
           Notes
         </v-btn>
+        <v-btn @click="toggleNavigate('/Tatyana')">
+          Tatyana
+        </v-btn>
         <v-btn @click="toggleNavigate('/about')">
           About
         </v-btn>

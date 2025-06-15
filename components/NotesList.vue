@@ -7,9 +7,7 @@
     >
       <div class="note__left--wrapper">
         <div class="note__left">
-          <CText>
-            {{ id }}
-          </CText>
+          <CText :text="id" />
           <CCheckbox
             :initial="Boolean(checked)"
             :value="String(id)"
@@ -19,11 +17,10 @@
       </div>
       <div class="note__right">
         <CText
+          :text="text"
           :class="{ 'c-text__through': checked }"
           style="width: 90%;"
-        >
-          {{ text }}
-        </CText>
+        />
       </div>
     </div>
   </div>
@@ -47,7 +44,7 @@ function checkNote(id: string | undefined) {
 
 <style lang="scss">
   .notes--container {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: calc(100vh - 209px);
 
     @media (max-width: map-get($breakpoints, md)) {
@@ -108,6 +105,7 @@ function checkNote(id: string | undefined) {
   }
 
   .note__right {
+    width: 100%;
     padding: 15px;
     display: flex;
     align-items: center;

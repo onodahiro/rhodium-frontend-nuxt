@@ -20,7 +20,8 @@ useHead({
 
 <style>
   html {
-    overflow-y: auto;
+    /* overflow-y: auto; */
+    overflow: hidden;
   }
 
   .page-container {

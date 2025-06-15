@@ -44,9 +44,9 @@
 </template>
 
 <script lang="ts">
-// export default {
-//   name: 'Index',
-// }
+export default {
+  name: 'Tatyana',
+}
 </script>
 
 1

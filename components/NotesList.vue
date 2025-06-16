@@ -43,11 +43,13 @@ function checkNote(id: string | undefined) {
 </script>
 
 <style lang="scss">
+@use "../assets/styles/_breakpoints";
+
   .notes--container {
     overflow-y: auto;
     height: calc(100vh - 209px);
 
-    @media (max-width: map-get($breakpoints, md)) {
+    @media (max-width: breakpoints.$md) {
       height: calc(100vh - 264px);
     }
 
@@ -83,7 +85,7 @@ function checkNote(id: string | undefined) {
     display: flex;
     padding-right: 15vw;
 
-    @media (max-width: map-get($breakpoints, md)) {
+    @media (max-width: breakpoints.$md) {
       min-height: 68px;
     }
   }
@@ -99,7 +101,7 @@ function checkNote(id: string | undefined) {
     justify-content: flex-end;
     align-items: center;
 
-    @media (max-width: map-get($breakpoints, md)) {
+    @media (max-width: breakpoints.$md) {
       padding: 10px;
     }
   }
@@ -110,7 +112,7 @@ function checkNote(id: string | undefined) {
     display: flex;
     align-items: center;
 
-    @media (max-width: map-get($breakpoints, md)) {
+    @media (max-width: breakpoints.$md) {
       padding: 10px;
     }
   }

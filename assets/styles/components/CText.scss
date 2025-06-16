@@ -1,9 +1,11 @@
+@use '../vars';
+
 .c-text__through {
   text-decoration: line-through;
 }
 
 .c-text-gradient {
-  background-image: $bg-text;
+  background-image: vars.$bg-text;
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;

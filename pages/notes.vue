@@ -41,6 +41,8 @@ function selectPage(page: number) {
 </script>
 
 <style lang="scss">
+@use "../assets/styles/_breakpoints";
+
 .notes-page {
   width: 100%;
   height: calc(100vh - 64px);
@@ -53,7 +55,7 @@ function selectPage(page: number) {
   justify-content: space-between;
   gap: 10%;
 
-  @media (max-width: map-get($breakpoints, md)) {
+  @media (max-width: breakpoints.$md) {
     padding: 15px 5vw;
     flex-direction: column;
     gap: 15px;

@@ -3,12 +3,11 @@
     <div class="main-page__bg" />
     <div class="main-page__welcome">
       <CText
+        text="Welcome"
         style="font-size: 65px;
         padding-top: 30vh;"
         class-name="c-text-gradient"
-      >
-        Welcome
-      </CText>
+      />
     </div>
   </div>
 </template>

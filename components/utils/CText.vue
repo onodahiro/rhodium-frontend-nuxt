@@ -16,7 +16,3 @@ const props = withDefaults(defineProps<{
   withGradient: false,
 })
 </script>
-
-<style lang="scss">
-@use '../../assets/styles/components/CText.scss';
-</style>

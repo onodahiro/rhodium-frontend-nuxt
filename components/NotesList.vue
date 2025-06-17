@@ -18,8 +18,8 @@
       <div class="note__right">
         <CText
           :text="text"
+          class-name="note-text"
           :class="{ 'c-text__through': checked }"
-          style="width: 90%;"
         />
       </div>
     </div>

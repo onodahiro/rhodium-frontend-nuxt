@@ -4,6 +4,11 @@
   text-decoration: line-through;
 }
 
+.welcome-text {
+  font-size: 65px;
+  padding-top: 30vh;
+}
+
 .c-text-gradient {
   background-image: vars.$bg-text;
   background-clip: text;
@@ -11,4 +16,8 @@
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+}
+
+.note-text {
+  width: 90%;
 }

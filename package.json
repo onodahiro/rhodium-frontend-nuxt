@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --port=3000 --debug",
+    "dev": "nuxt dev --port=3000 --host=127.0.0.1",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -17,14 +17,14 @@
     "@pinia/nuxt": "^0.5.4",
     "nuxt": "^3.13.0",
     "pinia": "^2.2.2",
-    "vue": "latest"
+    "vue": "latest",
+    "vuetify-nuxt-module": "^0.18.7"
   },
   "devDependencies": {
     "sass": "^1.78.0",
     "sass-loader": "^16.0.1",
     "typescript": "^5.5.4",
     "vite-plugin-eslint2": "^4.4.0",
-    "vite-plugin-vuetify": "^2.0.4",
     "vuetify": "^3.7.1"
   }
 }
